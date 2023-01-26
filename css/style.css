@@ -1,3 +1,40 @@
+body {
+  font-family: "Montserrat", sans-serif;
+}
 
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 40px 0 20px 0;
+}
+.header__logo {
+  font-family: "ganache", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #F7D358;
+}
+.header__logo h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 32px;
+}
+.header__navigation ul {
+  list-style: none;
+  display: flex;
+  padding-top: 6px;
+}
+.header__navigation ul li:first-child {
+  margin-left: 27px;
+}
+.header__navigation ul li:not(:first-child) {
+  margin-left: 45px;
+}
+.header__navigation ul li a {
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-decoration: none;
+}
 
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzdHlsZS5jc3MifQ== */
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Nhc3Mvc3R5bGUuc2NzcyIsInN0eWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLHFDQUFBO0FDQ0o7O0FERUE7RUFDSSxlQUFBO0VBQ0EsTUFBQTtFQUNBLE9BQUE7RUFDQSxRQUFBO0VBQ0Esc0JBQUE7QUNDSjtBREVJO0VBQ0ksa0NBQUE7RUFDQSxnQkFBQTtFQUNBLGtCQUFBO0VBQ0EsY0FBQTtBQ0FSO0FERVE7RUFDSSxTQUFBO0VBQ0EsVUFBQTtFQUNBLGVBQUE7QUNBWjtBRE9RO0VBQ0ksZ0JBQUE7RUFDQSxhQUFBO0VBQ0EsZ0JBQUE7QUNMWjtBRE9ZO0VBQ0ksaUJBQUE7QUNMaEI7QURPWTtFQUNJLGlCQUFBO0FDTGhCO0FEU2dCO0VBQ0ksZ0JBQUE7RUFDQSxxQkFBQTtFQUNBLHFCQUFBO0FDUHBCIiwiZmlsZSI6InN0eWxlLmNzcyJ9 */

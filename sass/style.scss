@@ -1,0 +1,50 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 40px 0 20px 0;
+
+
+    &__logo {
+        font-family: "ganache", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: #F7D358;
+
+        h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 32px;
+            
+        }
+    }
+
+    &__navigation {
+
+        ul {
+            list-style: none;
+            display: flex;
+            padding-top: 6px;
+
+            li:first-child {
+                margin-left: 27px
+            }
+            li:not(:first-child) {
+                margin-left: 45px;
+            }
+
+            li {
+                a {
+                    font-weight: 700;
+                    letter-spacing: .6px;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
