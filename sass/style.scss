@@ -1,5 +1,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .header {
@@ -8,6 +10,7 @@ body {
     left: 0;
     right: 0;
     padding: 40px 0 20px 0;
+    z-index: 100;
 
 
     &__logo {
@@ -40,11 +43,60 @@ body {
 
             li {
                 a {
-                    font-weight: 700;
+                    font-weight: 600;
                     letter-spacing: .6px;
                     text-decoration: none;
+                    color: white;
                 }
             }
+        }
+    }
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    color: white;
+   
+    &__img {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+    }
+
+    &__text {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 100%;
+        padding-top: 40px;
+
+        h1 {
+            font-size: 84px;
+            margin: 30px 0 0;
+        }
+
+        h2 {
+            margin: 150px 0 0;
+            font-family: "droid-serif", serif;
+            font-weight: 400;
+            font-style: italic;
+            font-size: 46px;
+        }
+
+        .btn {
+            display: inline-block;
+            color: white;
+            background-color: #F7D358;
+            border-radius: 5px;
+            padding: 28px 60px;
+            margin-top: 50px;
+            font-size: 20px;
+            letter-spacing: 1px;
+            text-decoration: none;
         }
     }
 }
