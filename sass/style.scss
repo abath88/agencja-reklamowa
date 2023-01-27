@@ -4,15 +4,40 @@ body {
     padding: 0;
 }
 
-section, footer {
+section {
     margin: 130px 0 0
+}
+
+h1 {
+    font-size: 64px;
+    margin: 30px 0 0;
+
+    @media screen and (min-width: 540px){
+        font-size: 84px;
+    }
+}
+
+h2 {
+    margin: 150px 0 0;
+    font-family: "droid-serif", serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 26px;
+
+    @media screen and (min-width: 540px) {
+        font-size: 46px;
+    }
 }
 
 h3 {
     text-align: center;
-    font-size: 48px;
+    font-size: 38px;
     letter-spacing: -2px;
-    margin-bottom: 10px
+    margin-bottom: 10px;
+
+    @media screen and (min-width: 540px){
+        font-size: 48px;
+    }
 }
 
 h4 {
@@ -24,14 +49,35 @@ h4 {
     margin: 0 0 50px;
 }
 
+.btn {
+    display: inline-block;
+    color: white;
+    background-color: #F7D358;
+    border-radius: 5px;
+    padding: 18px 40px;
+    margin-top: 50px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-decoration: none;
+
+    @media screen and (min-width: 540px){
+        padding: 28px 60px;
+    }
+}
+
 .header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    padding: 40px 0 20px 0;
+    padding: 40px 0 0 0;
     z-index: 100;
+    transition: all .3s ease;
 
+    &.show {
+        bottom: 0;
+        background-color: white
+    }
 
     &__logo {
         font-family: "ganache", sans-serif;
@@ -43,30 +89,99 @@ h4 {
             margin: 0;
             padding: 0;
             font-size: 32px;
-            
+        }
+    }
+
+    &__hamburger {
+        position: relative;
+        margin-left: auto;
+        display: block;
+        height: 100%;
+        cursor: pointer;
+        height: 62px;
+
+        @media screen and (min-width: 768px) {
+            display: none;
+        }
+
+        &::before, &::after {
+            content: "";
+            width: 50px;
+            height: 1px;
+            position: absolute;
+            background-color: white;
+            right: 0;
+            display: block;
+
+            .scrolled &, .show & {
+                background-color: black;
+            }
+        }
+
+        &::before {
+            top: calc(50% - 10px);
+        }
+
+        &::after {
+            top: calc(50% + 10px);
         }
     }
 
     &__navigation {
+        display: none;
+
+        .show & {
+            display: block;
+        }
+
+        @media screen and (min-width: 768px) {
+            display: block;
+        }
 
         ul {
             list-style: none;
             display: flex;
             padding-top: 6px;
 
+            .show & {
+                flex-direction: column;
+            }
+
             li:first-child {
-                margin-left: 27px
+                margin-left: 27px;
+
+                .show & {
+                    margin-left: 0;
+                }
             }
             li:not(:first-child) {
                 margin-left: 45px;
+
+                .show & {
+                    margin-left: 0;
+                }
             }
 
             li {
+                .show & {
+                    text-align: right;
+                }
                 a {
                     font-weight: 600;
                     letter-spacing: .6px;
                     text-decoration: none;
                     color: white;
+
+                    font-size: 12px;
+
+                    @media screen and (min-width: 1200px) {
+                        font-size: 16px;
+                    }
+
+                    .show & {
+                        color: black!important;
+                        font-size: 16px;
+                    }
                 }
             }
         }
@@ -93,31 +208,6 @@ h4 {
         text-align: center;
         width: 100%;
         padding-top: 40px;
-
-        h1 {
-            font-size: 84px;
-            margin: 30px 0 0;
-        }
-
-        h2 {
-            margin: 150px 0 0;
-            font-family: "droid-serif", serif;
-            font-weight: 400;
-            font-style: italic;
-            font-size: 46px;
-        }
-
-        .btn {
-            display: inline-block;
-            color: white;
-            background-color: #F7D358;
-            border-radius: 5px;
-            padding: 28px 60px;
-            margin-top: 50px;
-            font-size: 20px;
-            letter-spacing: 1px;
-            text-decoration: none;
-        }
     }
 }
 
@@ -169,6 +259,7 @@ h4 {
             object-fit: cover;
             object-position: center;
             height: 350px;
+            width: 100%;
         }
 
         h5 {
@@ -189,31 +280,65 @@ h4 {
 }
 
 .footer {
+    p {
+        font-size: 12px;
+        @media screen and (min-width: 992px) {
+            font-size: 16px;
+        }
+    }
     .copyright {
         display: flex;
         align-items: center;
+        order: 1;
+
+        @media screen and (min-width: 768px) {
+            order: -1;
+        }
     }
-    
+
     ul {
         list-style: none;
         display: flex;
+        padding: 0;
         li {
             font-size: 0;
-            margin-left: 15px;
+
+            &:not(:first-child) {
+                margin-left: 15px;
+            }
+
             a {
                 text-decoration: none;
             }
+            
             i {
-                font-size: 28px;
+                font-size: 18px;
                 background-color: black;
                 color: white;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                width: 48px;
-                height: 48px;
                 border-radius: 50%;
+                width: 28px;
+                height: 28px;
+
+                @media screen and (min-width: 992px) {
+                    font-size: 28px;
+                    width: 48px;
+                    height: 48px;
+                }
             }
         }
+    }
+}
+
+
+.scrolled {
+    background-color: #F7F7F7;
+    padding-top: 0;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+    li a{
+        color: black!important;
     }
 }
